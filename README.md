@@ -49,7 +49,7 @@ As already noted, "run_analysis.R" assumes that the original data is downloaded 
 * Clean "messy" variable names
 * Reshape data for easy transformation into tidy form (means of all kept variables). Done with "melt" command
 * Transform reshaped data into tidy dataset
-* Output tidy dataset as "dataTidy.txt"
+* Output tidy dataset as "dataTidy.txt" delimited by tabs
 
 ### Detailed data processing description
 * Read in the file ("features.txt") that contains the names of the measurement variables
@@ -75,7 +75,7 @@ As already noted, "run_analysis.R" assumes that the original data is downloaded 
 * Reshape data using the "melt" command from the "reshape2" R package. This yields a dataset with four columns, "Subject" and "Activity" as ID variables and a variable names column and a variable value column (e.g. if "Subject" "Activity" and three other variables (V1, V2, V3) were the only variables and there was only one observation, the new dataset would have three observations: Obs1[Subject, Activity, V1 Name, V1 Value] Obs2[Subject, Activity, V2 Name, V2 Value] Obs3[Subject, Activity, V3 Name, V3 Value]
 * Recast the data taking the mean of each variable by Subject-Activity combination.
 	* After recasting the data (using the "dcast" command from the "reshare2" R package), add "MEAN" to the front of each new mean variable.
-* Output the dataset as a "dataTidy.txt" file
+* Output the dataset as a "dataTidy.txt" file delimited by tabs
 
 ### Full R Code for Processing Original Dataset into Tidy Dataset
 
